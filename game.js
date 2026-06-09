@@ -209,3 +209,28 @@ function loop() {
 }
 
 loop();
+// TOUCH CONTROLS
+
+const leftBtn = document.getElementById("left");
+const rightBtn = document.getElementById("right");
+const jumpBtn = document.getElementById("jump");
+
+function press(key) {
+  keys[key] = true;
+}
+
+function release(key) {
+  keys[key] = false;
+}
+
+// LEFT
+leftBtn.addEventListener("touchstart", () => press("ArrowLeft"));
+leftBtn.addEventListener("touchend", () => release("ArrowLeft"));
+
+// RIGHT
+rightBtn.addEventListener("touchstart", () => press("ArrowRight"));
+rightBtn.addEventListener("touchend", () => release("ArrowRight"));
+
+// JUMP
+jumpBtn.addEventListener("touchstart", () => press(" "));
+jumpBtn.addEventListener("touchend", () => release(" "));
